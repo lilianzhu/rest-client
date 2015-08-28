@@ -136,7 +136,7 @@ module RestClient
   class RequestFailed < ExceptionWithResponse
 
     def message
-      "HTTP code:#{http_code}\nHeader:#{http_headers}\nBody:#{http_body}"
+      "HTTP code:#{http_code}\nHeader:#{http_headers}\n"
     end
 
     def to_s
