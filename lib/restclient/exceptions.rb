@@ -123,7 +123,7 @@ module RestClient
     end
 
     def message
-      @message || self.class.name
+      "#{message}: #{http_body}:#{http_headers}:" || self.class.name
     end
 
   end
