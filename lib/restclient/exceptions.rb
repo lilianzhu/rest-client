@@ -130,13 +130,6 @@ module RestClient
 
   # Compatibility
   class ExceptionWithResponse < Exception
-    def message
-      "HTTP code:#{http_code}\nHeader:#{http_headers}\nBody:#{http_body}"
-    end
-
-    def to_s
-      message
-    end
   end
 
   # The request failed with an error code not managed by the code
