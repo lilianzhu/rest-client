@@ -53,17 +53,17 @@ module RestClient
               449 => 'Retry With', #Microsoft
               450 => 'Blocked By Windows Parental Controls', #Microsoft
 
-              500 => 'Internal Server Error',
-              501 => 'Not Implemented',
-              502 => 'Bad Gateway',
-              503 => 'Service Unavailable',
-              504 => 'Gateway Timeout',
-              505 => 'HTTP Version Not Supported',
-              506 => 'Variant Also Negotiates',
-              507 => 'Insufficient Storage', #WebDAV
-              509 => 'Bandwidth Limit Exceeded', #Apache
-              510 => 'Not Extended',
-              511 => 'Network Authentication Required', # RFC6585
+              # 500 => 'Internal Server Error',
+              # 501 => 'Not Implemented',
+              # 502 => 'Bad Gateway',
+              # 503 => 'Service Unavailable',
+              # 504 => 'Gateway Timeout',
+              # 505 => 'HTTP Version Not Supported',
+              # 506 => 'Variant Also Negotiates',
+              # 507 => 'Insufficient Storage', #WebDAV
+              # 509 => 'Bandwidth Limit Exceeded', #Apache
+              # 510 => 'Not Extended',
+              # 511 => 'Network Authentication Required', # RFC6585
   }
 
   # Compatibility : make the Response act like a Net::HTTPResponse when needed
