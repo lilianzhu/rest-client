@@ -130,6 +130,13 @@ module RestClient
 
   # Compatibility
   class ExceptionWithResponse < Exception
+    def message
+      "HTTP code:#{http_code}\nHeader:#{http_headers}\nBody:#{http_body}"
+    end
+
+    def to_s
+      message
+    end
   end
 
   # The request failed with an error code not managed by the code
@@ -155,7 +162,7 @@ module RestClient
     # Compatibility
     superclass = ([304, 401, 404].include? code) ? ExceptionWithResponse : RequestFailed
     klass = Class.new(superclass) do
-      send(:define_method, :message) {"#{http_code ? "#{http_code} " : ''}#{message} "\n http_headers: "#{http_headers}"}
+      send(:define_method, :message) {"#{http_code ? "#{http_code} " : ''}#{message} "}
     end
     klass_constant = const_set message.delete(' \-\''), klass
     Exceptions::EXCEPTIONS_MAP[code] = klass_constant
