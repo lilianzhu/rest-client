@@ -109,13 +109,9 @@ module RestClient
     def http_body
       @response.body if @response
     end
-    
-    def http_headers
-      @response.headers if @response
-    end
 
     def inspect
-      "#{message}: #{http_body}:#{http_headers}:"
+      "#{message}: #{http_body}"
     end
 
     def to_s
@@ -123,7 +119,7 @@ module RestClient
     end
 
     def message
-      "#{message}" || self.class.name
+      @message || self.class.name
     end
 
   end
